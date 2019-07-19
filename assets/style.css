@@ -95,14 +95,32 @@ body{
 .fa-youtube:hover{
 	color: #c4302b;
 	transition: color 300ms;
+	transform: skew(10deg);
+	animation: shake 1s infinite;
+  	animation-direction: alternate;
 }
 .fa-facebook:hover{
 	color: #3b5998;
 	transition: color 300ms;
+	transform: skew(5deg);
+	animation: shake 1s infinite;
+  	animation-direction: alternate;
 }
 .fa-twitter:hover{
 	color: #00acee;
 	transition: color 300ms;
+	transform: skew(10deg);
+	animation: shake 1s infinite;
+  	animation-direction: alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: skewY(10deg);
+  }
+  100% {
+    transform: skewY(-10deg);
+  }
 }
 
 .grid-2{
