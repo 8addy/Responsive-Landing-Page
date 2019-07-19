@@ -1,0 +1,156 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: rgba(0,0,0,0.9);
+	color: #FFFFFF;
+	font-family: 'Segoe UI', Tahome, Verdana, sans-serif;
+}
+/*global*/
+.container{
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+	padding: 4rem 2rem;
+}
+.center{
+	text-align: center;
+	margin: auto;
+}
+.bg-light{
+	background-color: #f4f4f4;
+	color: #333;
+}
+.bg-dark{
+	background-color: #333;
+	color: #f4f4f4;
+}
+
+
+#showcase::after{
+	content: '';
+	background-image: url('cover.jpg');
+	height: 100vh;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: block;
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	transition: all 800ms;
+}
+
+#showcase:hover::after{
+	filter: blur(0);
+	-webkit-filter: blur(0);
+}
+
+#showcase:hover .content{
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+}
+
+
+.content{
+	position: absolute;
+	z-index: 1;
+	width: 300px;
+	height: 350px;
+	top: 10%;
+	left: 50%;
+	margin-top: 100px;
+	margin-left: -145px;
+	transition: all 500ms ease-in-out;
+}
+
+.content img{
+	width: 270px;
+	height: auto;
+}
+
+.content .title{
+	font-size: 2.6rem;
+	margin-top: 1rem;
+}
+
+.content .text{
+	line-height: 1.7;
+	margin-top: 1rem
+}
+
+.grid-3{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+}
+.fab{
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.fa-youtube:hover{
+	color: #c4302b;
+	transition: color 300ms;
+}
+.fa-facebook:hover{
+	color: #3b5998;
+	transition: color 300ms;
+}
+.fa-twitter:hover{
+	color: #00acee;
+	transition: color 300ms;
+}
+
+.grid-2{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#footer{
+	padding: 1.7rem;
+
+}
+
+#footer p{
+	margin: 0;
+}
+
+@media (max-width: 670px){
+	#showcase::after{
+		height: 50vh;
+	}
+
+	#showcase .content{
+		margin-top: 5px;
+		top: 5%;
+	}
+
+	#showcase .content img{
+		width: 200px;
+		height: auto;
+	}
+
+	#showcase .content .text{
+		display: none;
+	}
+
+	.grid-3, .grid-2{
+		grid-template-columns: 1fr;
+	}
+
+	#services .grid-3 div{
+		padding: 1.6rem 1rem;
+	}
+}
+
+/*Landscape Mode*/
+@media (max-height: 640px){
+	#showcase .content .title, #showcase .content .text {
+		display: none;
+	}
+}
